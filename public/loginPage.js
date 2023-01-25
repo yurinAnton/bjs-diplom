@@ -4,18 +4,18 @@ let userForm = new UserForm();
 
 userForm.loginFormCallback = (data) => {
    ApiConnector.login(data, (response) => {
-      if (response === data) {
+      if (response.success) {
          this.location.reload();
       }
-      return loginErrorMessage(message);
+      setLoginErrorMessage(message);
    });
 };
 
 userForm.registerFormCallback = (data) => {
    ApiConnector.login(data, (response) => {
-      if (response === data) {
+      if (response.success) {
          this.location.reload();
       }
-      return registerErrorMessage(message);
+      setRegisterErrorMessage(message);
    });
 };
